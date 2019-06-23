@@ -32,7 +32,7 @@ self.addEventListener('fetch', (event) => {
     } catch (err) {
       // If this was a navigation, show the offline page:
       if (request.mode === 'navigate') {
-        return caches.match('offline.html');
+        return caches.match('index.html');
       }
 
       // Otherwise throw
