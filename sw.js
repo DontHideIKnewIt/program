@@ -1,18 +1,9 @@
 
-var cacheName = 'hello-world-page';
-var CACHE_STATIC_NAME = 'static-v10';
-var CACHE_DYNAMIC_NAME = 'dynamic-v2';
-
-var filesToCache = [
-  '/index.html'
-];
-
-
 
 self.addEventListener('install', (event) =>  {
   event.waitUntil(async function() {
     const cache = await caches.open('static-v1');
-    await cache.addAll(['index.html','lingkaran.png','persegi.png','ppanjang.png','segitiga.png']);
+    await cache.addAll(['./index.html','./lingkaran.png','./persegi.png','./ppanjang.png','./segitiga.png']);
   }());
 });
 
