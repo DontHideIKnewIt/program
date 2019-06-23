@@ -1,0 +1,16 @@
+{
+  "name": "PWAmath",
+  "short_name": "PWAmath",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2A3443",
+  "description": "A demo app for a pwa math",
+  "theme_color": "#2A3443",
+  "icons": [
+    {
+      "src": "./lingkaran.png",
+      "sizes": "31x311",
+      "type": "lingkaran/png"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+</head>
+<body>
+  <div data-role="page">
+
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home">Home</a>
+      <h1>Rumus Matematika</h1>
+      <a data-iconpos="notext" href="#panel" data-role="button" data-icon="flat-menu"></a>
+    </div>
+
+    <div data-role="content" role="main">
+		<div data-role="tabs" id="tabs">
+		  <div data-role="navbar">
+			<ul>
+			  <li><a href="#one" data-ajax="false"><img style="height:20px" src="persegi.png"/></a></li>
+			  <li><a href="#two" data-ajax="false"><img style="height:20px" src="ppanjang.png"/></a></li>
+			  <li><a href="#three" data-ajax="false"><img style="height:20px" src="lingkaran.png"/></a></li>
+			  <li><a href="#four" data-ajax="false"><img style="height:20px" src="segitiga.png"/></a></li>
+			</ul>
+		  </div>
+		  <div id="one" class="ui-body-d ui-content">
+			 <label for="text-basic">Sisi :</label>
+		 	 <input type="text" name="text-basic" id="sisi" value="">
+		     <button onclick="persegi();">Kalkulasi</button>
+		     <div id="hasil">
+			 </div>
+		  </div>
+		  <div id="two" class="ui-body-d ui-content">
+			 <label for="text-basic">Lebar :</label>
+		 	 <input type="text" name="text-basic" id="lebar" value="">
+			 <label for="text-basic">Panjang :</label>
+		 	 <input type="text" name="text-basic" id="panjang" value="">
+		     <button onclick="persegipanjang();">Kalkulasi</button>
+		     <div id="hasil2">
+			 </div>
+		  </div>
+		  <div id="three" class="ui-body-d ui-content">
+			 <label for="text-basic">Jari-jari :</label>
+		 	 <input type="text" name="text-basic" id="jari" value="">
+		     <button onclick="lingkaran();">Kalkulasi</button>
+		     <div id="hasil3">
+			 </div>
+		  </div>
+		  <div id="four" class="ui-body-d ui-content">
+			 <label for="text-basic">Alas :</label>
+		 	 <input type="text" name="text-basic" id="alas" value="">
+			 <label for="text-basic">Tinggi :</label>
+		 	 <input type="text" name="text-basic" id="tinggi" value="">
+		     <button onclick="segitiga();">Kalkulasi</button>
+		     <div id="hasil4">
+			 </div>
+		  </div>
+		</div>
+    </div>
+  </div>
+
+  <div id="highlight"> </div>
+  
+  <script>
+     function persegi()
+	 {
+		var sisi=$("#sisi").val();
+		var luas=sisi*sisi;
+		console.log(luas);
+		$("#hasil").html("Luas Persegi :"+luas);
+	 }
+	 function persegipanjang()
+	 {
+		var lebar=$("#lebar").val();
+		var panjang=$("#panjang").val();
+		var luas=lebar*panjang;
+		console.log(luas);
+		$("#hasil2").html("Luas Persegi Panjang :"+luas);
+	 }
+	 function lingkaran()
+	 {
+		var jari=$("#jari").val();
+		var luas=3.14*jari*jari;
+		console.log(luas);
+		$("#hasil3").html("Luas Lingkaran :"+luas);
+	 }
+	 function segitiga()
+	 {
+		var alas=$("#alas").val();
+		var tinggi=$("#tinggi").val();
+		var luas=0.5*alas*tinggi;
+		console.log(luas);
+		$("#hasil4").html("Luas Segitiga :"+luas);
+	 }
+  </script>
+   <script>
+	  if('serviceWorker' in navigator) {
+        	  
+		navigator.serviceWorker.register('/sw.js')
+          .then(function() {
+                console.log('Service Worker Registered');
+          });
+      }
+	  else {
+	  }
+    </script>
+</body>
+</html>
